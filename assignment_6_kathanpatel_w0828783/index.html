@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Form</title>
+    <style>
+        
+        body {
+            background-color: #FFDAB9; 
+        }
+
+        label {
+            font-size: 1.2em; 
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%; 
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 1em; 
+        }
+
+       
+        @media screen and (min-width: 601px) {
+            body {
+                background-color: #B0E0E6;
+            }
+
+            .form-container {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 20px;
+            }
+
+            .form-container label {
+                font-size: 1em; 
+            }
+
+            .form-container .field-label {
+                text-align: right;
+                align-self: center;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea {
+                font-size: 0.9em; 
+            }
+
+            
+            .radio-container {
+                display: flex;
+                align-items: center;
+            }
+
+            .radio-container input[type="radio"] {
+                margin-right: 10px;
+                transform: scale(1.5); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Web Form</h1>
+    </header>
+
+    <form action="#" method="post" class="form-container">
+        <label for="fullName" class="field-label">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="email" class="field-label">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone" class="field-label">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="message" class="field-label">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <label class="field-label">Do you agree?</label>
+        <div class="radio-container">
+            <input type="radio" name="agree" value="yes" required> Yes
+            <input type="radio" name="agree" value="no" required> No
+        </div>
+
+        <div></div>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
